@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.meliapp"
-        minSdk 25
+        minSdk 26
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -38,6 +38,7 @@ android {
 
 dependencies {
     def retrofit_version = '2.9.0'
+    def okHttpClient_version = '4.9.1'
     def hilt_version = '2.38.1'
 
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -45,10 +46,11 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
 
-    // Retrofit
+    // Network
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.squareup.okhttp3:okhttp:4.9.1"
+    implementation "com.squareup.okhttp3:okhttp:$okHttpClient_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttpClient_version"
 
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
@@ -68,6 +70,7 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     testImplementation "org.mockito:mockito-core:4.1.0"
     testImplementation "org.mockito.kotlin:mockito-kotlin:4.0.0"
+    testImplementation 'org.mockito:mockito-inline:3.9.0'
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2"
     testImplementation "androidx.arch.core:core-testing:2.1.0"
 
