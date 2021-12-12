@@ -23,7 +23,7 @@ class ProductsDataSourceTest {
     private val mockedListOfResults = listOf(mockResults, mockResults, mockResults)
 
     @Test
-    internal fun load_onSuccessfulLoadOfItemKeyedData_returnsPage() = runBlockingTest {
+    fun load_onSuccessfulLoadOfItemKeyedData_returnsPage() = runBlockingTest {
         mockApiResponse()
         val pagingSource = ProductsDataSource(mockMeLiApi, mockQuery)
         assertThat(
