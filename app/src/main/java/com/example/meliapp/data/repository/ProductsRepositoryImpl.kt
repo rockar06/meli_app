@@ -9,9 +9,7 @@ import com.example.meliapp.data.datasource.ProductsDataSource
 import com.example.meliapp.data.model.Results
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
 class ProductsRepositoryImpl @Inject constructor(
     private val service: MeLiApi
 ) : ProductsRepository {

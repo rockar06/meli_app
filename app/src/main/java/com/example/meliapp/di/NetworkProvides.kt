@@ -5,6 +5,7 @@ import com.example.meliapp.data.api.MeLiApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -18,8 +19,8 @@ class NetworkProvides {
 
     private val requestTimeout = Duration.ofSeconds(30)
 
-    @Provides
     @Singleton
+    @Provides
     fun providesRetrofitInstance(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
@@ -28,8 +29,8 @@ class NetworkProvides {
             .build()
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun providesOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
             .readTimeout(requestTimeout)
@@ -38,6 +39,7 @@ class NetworkProvides {
             .build()
     }
 
+    @Singleton
     @Provides
     fun providesMeliRepositoryInstance(retrofit: Retrofit): MeLiApi {
         return retrofit.create(MeLiApi::class.java)
