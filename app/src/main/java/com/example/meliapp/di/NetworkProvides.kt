@@ -1,7 +1,7 @@
 package com.example.meliapp.di
 
 import com.example.meliapp.BuildConfig
-import com.example.meliapp.data.services.MeLiServices
+import com.example.meliapp.data.api.MeLiApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -39,7 +39,7 @@ class NetworkProvides {
     }
 
     @Provides
-    fun providesMeliRepositoryInstance(retrofit: Retrofit): MeLiServices {
-        return retrofit.create(MeLiServices::class.java)
+    fun providesMeliRepositoryInstance(retrofit: Retrofit): MeLiApi {
+        return retrofit.create(MeLiApi::class.java)
     }
 }
