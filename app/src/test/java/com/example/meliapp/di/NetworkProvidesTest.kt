@@ -1,11 +1,10 @@
 package com.example.meliapp.di
 
-import com.example.meliapp.data.repository.MeLiRepository
+import com.example.meliapp.data.services.MeLiServices
 import com.google.common.truth.Truth.assertThat
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.junit.Test
-import org.mockito.kotlin.any
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
 import retrofit2.Retrofit
@@ -17,7 +16,7 @@ class NetworkProvidesTest {
     private val systemUnderTest: NetworkProvides = NetworkProvides()
     private val mockOkHttpClient: OkHttpClient = mock()
     private val mockRetrofit: Retrofit = mock()
-    private val mockMeLiRepository: MeLiRepository = mock()
+    private val mockMeLiServices: MeLiServices = mock()
 
     @Test
     fun providesRetrofitInstance_baseUrl_isUrlExpected() {
@@ -39,9 +38,9 @@ class NetworkProvidesTest {
     }
 
     @Test
-    fun providesMeliRepositoryInstance_getInstance_instanceOfMeliRepository() {
-        whenever(mockRetrofit.create(MeLiRepository::class.java)).thenReturn(mockMeLiRepository)
+    fun providesMeliServicesInstance_getInstance_instanceOfMeliServices() {
+        whenever(mockRetrofit.create(MeLiServices::class.java)).thenReturn(mockMeLiServices)
         val meliRepository = systemUnderTest.providesMeliRepositoryInstance(mockRetrofit)
-        assertThat(meliRepository).isInstanceOf(MeLiRepository::class.java)
+        assertThat(meliRepository).isInstanceOf(MeLiServices::class.java)
     }
 }

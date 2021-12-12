@@ -1,14 +1,14 @@
-package com.example.meliapp.data.repository
+package com.example.meliapp.data.services
 
 import com.example.meliapp.data.model.SearchResult
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 /**
- * [MeLiRepository] is the interface where we can declare each endpoint to use from backend
+ * [MeLiServices] is the interface where we can declare each endpoint to use from backend
  */
 
-interface MeLiRepository {
+interface MeLiServices {
 
     /**
      * Send the [productToSearch] as query parameter in the get request
