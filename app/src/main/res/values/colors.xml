@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="search_text_color">#FA615E5E</color>
     <color name="search_text_hint_color">#FAA59D9D</color>
+    <color name="green_color">#0CC104</color>
 </resources>

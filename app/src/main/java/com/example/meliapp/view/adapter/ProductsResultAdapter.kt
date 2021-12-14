@@ -1,10 +1,19 @@
 package com.example.meliapp.view.adapter
 
+import android.content.Context
+import android.graphics.Typeface
+import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.core.text.buildSpannedString
+import androidx.core.text.inSpans
+import androidx.core.view.isInvisible
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.example.meliapp.R
 import com.example.meliapp.data.model.Results
 import com.example.meliapp.databinding.ProductItemBinding
 import com.example.meliapp.utils.formatAsCurrency
@@ -17,6 +26,7 @@ class ProductsResultAdapter(private val onClickItem: OnClickItem) :
 
     class ProductsResultViewHolder(private val binding: ProductItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
         fun bind(item: Results?, onClickItem: OnClickItem) {
             with(binding) {
                 root.setOnClickListener {
@@ -25,6 +35,38 @@ class ProductsResultAdapter(private val onClickItem: OnClickItem) :
                 productTitle.text = item?.title
                 productImage.load(item?.thumbnail)
                 productPrice.text = item?.price?.formatAsCurrency()
+                productFinancialPlan.text = getFinancialPlan(binding.root.context, item)
+                productShipment.isInvisible = item?.shipping?.freeShipping?.not() ?: true
+            }
+        }
+
+        private fun getFinancialPlan(context: Context, item: Results?): CharSequence {
+            val installments = item?.installments
+            return if (installments?.rate == 0.toDouble()) {
+                buildSpannedString {
+                    inSpans(
+                        ForegroundColorSpan(
+                            ContextCompat.getColor(
+                                context,
+                                R.color.green_color
+                            )
+                        )
+                    ) {
+                        append(
+                            context.getString(
+                                R.string.financial_plan_msi,
+                                installments.quantity,
+                                installments.amount
+                            )
+                        )
+                    }
+                }
+            } else {
+                context.getString(
+                    R.string.financial_plan,
+                    installments?.quantity,
+                    installments?.amount
+                )
             }
         }
     }

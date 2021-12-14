@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:textColor="#0CC104"
+        android:textColor="@color/green_color"
         app:layout_constraintBottom_toBottomOf="@id/productPrice"
         app:layout_constraintStart_toEndOf="@id/productPrice"
         tools:text="@string/example_discount" />
@@ -72,10 +72,12 @@
         android:id="@+id/productShipment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#0CC104"
+        android:text="@string/example_shipment"
+        android:textColor="@color/green_color"
+        android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="@id/productFinancialPlan"
-        app:layout_constraintTop_toBottomOf="@id/productFinancialPlan"
-        tools:text="@string/example_shipment" />
+        app:layout_constraintTop_toBottomOf="@id/productFinancialPlan" />
 
     <TextView
         android:id="@+id/productVendor"
