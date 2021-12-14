@@ -9,5 +9,21 @@
         android:id="@+id/productsResultFragment"
         android:name="com.example.meliapp.view.fragment.ProductsResultFragment"
         android:label="ProductsResultFragment"
-        tools:layout="@layout/fragment_products_result" />
+        tools:layout="@layout/fragment_products_result">
+        <action
+            android:id="@+id/action_productsResultFragment_to_productDetailPageFragment"
+            app:destination="@id/productDetailPageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productDetailPageFragment"
+        android:name="com.example.meliapp.view.fragment.ProductDetailPageFragment"
+        android:label="ProductDetailPageFragment"
+        tools:layout="@layout/fragment_product_detail">
+        <argument
+            android:name="productDetail"
+            android:defaultValue="@null"
+            app:argType="com.example.meliapp.data.model.Results"
+            app:nullable="true" />
+    </fragment>
 </navigation>
