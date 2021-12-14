@@ -13,7 +13,7 @@ data class Results(
     @SerializedName("id") val id: String,
     @SerializedName("site_id") val site_id: String,
     @SerializedName("title") val title: String,
-    @SerializedName("price") val price: Int,
+    @SerializedName("price") val price: Double,
     @SerializedName("currency_id") val currencyId: String,
     @SerializedName("available_quantity") val availableQuantity: Int,
     @SerializedName("sold_quantity") val sold_quantity: Int,

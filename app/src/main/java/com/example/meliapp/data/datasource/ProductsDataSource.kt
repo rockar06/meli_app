@@ -5,7 +5,7 @@ import androidx.paging.PagingState
 import com.example.meliapp.data.api.MeLiApi
 import com.example.meliapp.data.model.Results
 
-const val NETWORK_PAGE_SIZE = 20
+const val NETWORK_PAGE_SIZE = 15
 const val MELI_STARTING_PAGE_INDEX = 0
 
 class ProductsDataSource(
