@@ -16,6 +16,7 @@ data class Results(
     @SerializedName("price") val price: Double,
     @SerializedName("currency_id") val currencyId: String,
     @SerializedName("available_quantity") val availableQuantity: Int,
+    @SerializedName("installments") val installments: Installments,
     @SerializedName("sold_quantity") val sold_quantity: Int,
     @SerializedName("condition") val condition: String,
     @SerializedName("thumbnail") val thumbnail: String,
