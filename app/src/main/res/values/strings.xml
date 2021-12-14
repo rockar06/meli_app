@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MeLi App</string>
+    <string name="example_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque magna vitae laoreet.</string>
+    <string name="example_price">$ 1,000</string>
+    <string name="example_discount">8% OFF</string>
+    <string name="example_financial_plan">en 12x $ 83\u00B3\u00B3</string>
+    <string name="example_shipment">Envío gratis</string>
+    <string name="example_vendor">Vendido por Example</string>
+    <string name="product_image_description">Product Image</string>
 </resources>
