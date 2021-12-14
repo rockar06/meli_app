@@ -34,17 +34,22 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
     def retrofit_version = '2.9.0'
     def okHttpClient_version = '4.9.1'
     def hilt_version = '2.38.1'
+    def nav_version = "2.3.5"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    implementation 'androidx.fragment:fragment-ktx:1.4.0'
 
     // Network
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
@@ -64,6 +69,14 @@ dependencies {
     // Dependency Injection
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // Tools
+    implementation "io.coil-kt:coil:1.4.0"
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     // Unit tests
     testImplementation "com.google.truth:truth:1.1.3"
