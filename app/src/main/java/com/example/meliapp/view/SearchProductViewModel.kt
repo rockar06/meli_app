@@ -6,12 +6,14 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.example.meliapp.data.model.Results
 import com.example.meliapp.data.repository.ProductsRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
+@HiltViewModel
 class SearchProductViewModel @Inject constructor(
     private val repository: ProductsRepository
-): ViewModel() {
+) : ViewModel() {
 
     private var currentQueryValue: String? = null
     private var currentSearchResult: Flow<PagingData<Results>>? = null
