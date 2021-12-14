@@ -4,6 +4,7 @@ import androidx.paging.PagingData
 import com.example.meliapp.MainCoroutineRule
 import com.example.meliapp.data.model.Results
 import com.example.meliapp.data.repository.ProductsRepository
+import com.example.meliapp.view.viewmodel.SearchProductViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.test.runBlockingTest

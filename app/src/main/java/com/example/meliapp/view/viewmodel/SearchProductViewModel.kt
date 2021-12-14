@@ -1,4 +1,4 @@
-package com.example.meliapp.view
+package com.example.meliapp.view.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
