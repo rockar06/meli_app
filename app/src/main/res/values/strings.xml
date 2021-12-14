@@ -7,4 +7,11 @@
     <string name="example_shipment">Envío gratis</string>
     <string name="example_vendor">Vendido por Example</string>
     <string name="product_image_description">Product Image</string>
+    <string name="product_detail_argument">productDetail</string>
+    <string name="search_hint">Buscar por un producto</string>
+    <string name="retry_button">Reintentar</string>
+    <string name="unexpected_error_loading_data">Hubo un error al procesar su solicitud, intente nuevamente más tarde.</string>
+    <string name="no_results_found">No hay resultados para la busqueda realizada.</string>
+    <string name="no_results_description">No results found</string>
+    <string name="start_search">Escriba un producto en la barra de busqueda para mostrar resultados.</string>
 </resources>
