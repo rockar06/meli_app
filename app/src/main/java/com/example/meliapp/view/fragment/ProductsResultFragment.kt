@@ -24,6 +24,8 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
+private const val LAST_QUERY = "lastQuery"
+
 @AndroidEntryPoint
 class ProductsResultFragment : Fragment(), SearchProduct {
 
@@ -35,6 +37,7 @@ class ProductsResultFragment : Fragment(), SearchProduct {
     private val productsAdapter = ProductsResultAdapter { item ->
         openProductDetailPage(item)
     }
+    private var lastQuery: String? = null
 
     private fun openProductDetailPage(item: Results?) {
         val action =
@@ -58,7 +61,7 @@ class ProductsResultFragment : Fragment(), SearchProduct {
         setupRecyclerView()
         setupAdapter()
         setupRetryButton()
-        showDefaultView()
+        performQueryIfNeeded(savedInstanceState)
     }
 
     private fun setupNavController() {
@@ -96,8 +99,11 @@ class ProductsResultFragment : Fragment(), SearchProduct {
         binding.retryButton.setOnClickListener { productsAdapter.retry() }
     }
 
-    private fun showDefaultView() {
-        binding.startSearchGroup.isVisible = productsAdapter.itemCount == 0
+    private fun performQueryIfNeeded(savedInstanceState: Bundle?) {
+        lastQuery = savedInstanceState?.getString(LAST_QUERY)
+        lastQuery?.let {
+            search(it)
+        }
     }
 
     private fun getDividerDecoration() =
@@ -120,6 +126,12 @@ class ProductsResultFragment : Fragment(), SearchProduct {
     }
 
     override fun onNewSearch(query: String) {
+        lastQuery = query
         search(query)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(LAST_QUERY, lastQuery)
     }
 }
