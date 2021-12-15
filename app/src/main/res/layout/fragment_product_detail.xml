@@ -1,6 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/productCondition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/productConditionSeparator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Nuevo" />
+
+    <TextView
+        android:id="@+id/productConditionSeparator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:text="@string/string_separator"
+        app:layout_constraintStart_toEndOf="@id/productCondition"
+        app:layout_constraintTop_toTopOf="@id/productCondition" />
+
+    <TextView
+        android:id="@+id/productSoldQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintStart_toEndOf="@id/productConditionSeparator"
+        app:layout_constraintTop_toTopOf="@id/productCondition"
+        tools:text="1000 vendidos" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/soldQuantityGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="productConditionSeparator, productSoldQuantity" />
+
+    <TextView
+        android:id="@+id/productTitle"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ellipsize="end"
+        android:justificationMode="inter_word"
+        android:maxLines="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productCondition"
+        tools:text="@string/example_text" />
+
+    <ImageView
+        android:id="@+id/productImage"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/product_image_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productTitle"
+        tools:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/productPrice"
+        style="@style/TextAppearance.MaterialComponents.Headline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productImage"
+        tools:text="@string/example_price" />
+
+    <TextView
+        android:id="@+id/productPlan"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productPrice"
+        tools:text="en 3x $ 918.33 sin interés" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

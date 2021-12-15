@@ -17,4 +17,10 @@
     <string name="financial_plan">en %1$dx $ %2$.2f</string>
     <string name="financial_plan_msi">en %1$dx $ %2$.2f MSI</string>
     <string name="fragment_product_detail_title">Producto</string>
+    <string name="new_product">Nuevo</string>
+    <string name="used_product">Usado</string>
+    <string name="string_separator">|</string>
+    <string name="sold_quantity">%d vendidos</string>
+    <string name="product_plan_prefix">"en "</string>
+    <string name="product_plan_detail">%1$dx $ %2$.2f sin interés</string>
 </resources>
