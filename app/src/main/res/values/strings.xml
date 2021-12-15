@@ -16,4 +16,5 @@
     <string name="start_search">Escriba un producto en la barra de busqueda para mostrar resultados.</string>
     <string name="financial_plan">en %1$dx $ %2$.2f</string>
     <string name="financial_plan_msi">en %1$dx $ %2$.2f MSI</string>
+    <string name="fragment_product_detail_title">Producto</string>
 </resources>

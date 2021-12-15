@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
     private val listener = NavController.OnDestinationChangedListener { _, destination, _ ->
-        binding.searchView.isGone = destination.label == ProductDetailPageFragment::class.simpleName
+        binding.searchView.isGone = destination.label == getString(R.string.fragment_product_detail_title)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

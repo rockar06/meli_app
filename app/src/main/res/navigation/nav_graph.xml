@@ -12,13 +12,17 @@
         tools:layout="@layout/fragment_products_result">
         <action
             android:id="@+id/action_productsResultFragment_to_productDetailPageFragment"
-            app:destination="@id/productDetailPageFragment" />
+            app:destination="@id/productDetailPageFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
     <fragment
         android:id="@+id/productDetailPageFragment"
         android:name="com.example.meliapp.view.fragment.ProductDetailPageFragment"
-        android:label="ProductDetailPageFragment"
+        android:label="@string/fragment_product_detail_title"
         tools:layout="@layout/fragment_product_detail">
         <argument
             android:name="productDetail"

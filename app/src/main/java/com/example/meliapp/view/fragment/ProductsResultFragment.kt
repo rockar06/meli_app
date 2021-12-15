@@ -100,7 +100,7 @@ class ProductsResultFragment : Fragment(), SearchProduct {
     }
 
     private fun performQueryIfNeeded(savedInstanceState: Bundle?) {
-        lastQuery = savedInstanceState?.getString(LAST_QUERY)
+        lastQuery = savedInstanceState?.getString(LAST_QUERY) ?: lastQuery
         lastQuery?.let {
             search(it)
         }
