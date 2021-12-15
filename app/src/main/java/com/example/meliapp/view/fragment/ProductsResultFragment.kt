@@ -40,10 +40,7 @@ class ProductsResultFragment : Fragment(), SearchProduct {
     private var lastQuery: String? = null
 
     private fun openProductDetailPage(item: Results?) {
-        val action =
-            ProductsResultFragmentDirections.actionProductsResultFragmentToProductDetailPageFragment(
-                item
-            )
+        val action = ProductsResultFragmentDirections.openPdpPage(item)
         findNavController().navigate(action)
     }
 

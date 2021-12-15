@@ -11,7 +11,7 @@
         android:label="ProductsResultFragment"
         tools:layout="@layout/fragment_products_result">
         <action
-            android:id="@+id/action_productsResultFragment_to_productDetailPageFragment"
+            android:id="@+id/openPdpPage"
             app:destination="@id/productDetailPageFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
